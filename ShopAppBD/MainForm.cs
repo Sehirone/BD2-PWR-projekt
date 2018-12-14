@@ -12,17 +12,18 @@ using Oracle.ManagedDataAccess.Types;
 
 namespace ShopAppBD
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         User user;
 
-        public Form1(User user)
+        public MainForm(User user)
         {
             this.user = user;
             InitializeComponent();
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        // close application if main form is closed
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

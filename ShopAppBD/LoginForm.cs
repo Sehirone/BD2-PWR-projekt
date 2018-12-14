@@ -12,17 +12,21 @@ using Oracle.ManagedDataAccess.Types;
 
 namespace ShopAppBD
 {
+    // Connects to user database - provides loging in functionality 
     public partial class LoginForm : Form
     {
         User user;
         OracleConnection conn;
-        string oradb = "Data Source=DESKTOP-774776S;User Id=SYSTEM;Password=system_password;";
+        // ******************************************************************************
+        // !!! HERE should be a user with only SELECT pracownicy/stanowiska privilage !!!
+        // ******************************************************************************
+        string connectionString = "Data Source=DESKTOP-774776S;User Id=SYSTEM;Password=system_password;";
 
         public LoginForm(User user)
         {
             // setup connection with database
             this.user = user;
-            conn = new OracleConnection(oradb); // C#
+            conn = new OracleConnection(connectionString);
             conn.Open();
             InitializeComponent();
             if (conn.State == ConnectionState.Open)
@@ -37,12 +41,14 @@ namespace ShopAppBD
 
         ~LoginForm()
         {
+            // drop conenction to user database
             conn.Dispose();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if(conn.State == ConnectionState.Open)
+            // tries to connect user if database connection is set -- if successful closes dialogBox
+            if (conn.State == ConnectionState.Open)
             {
                 user.SetLogin(loginBox.Text);
                 user.SetPassword(passwordBox.Text);
@@ -90,7 +96,7 @@ namespace ShopAppBD
                 infoBox.Text = "Połączenie z bazą już istnieje!";
             } else
             {
-                conn = new OracleConnection(oradb); // C#
+                conn = new OracleConnection(connectionString);
                 conn.Open();
                 if (conn.State == ConnectionState.Open)
                 {

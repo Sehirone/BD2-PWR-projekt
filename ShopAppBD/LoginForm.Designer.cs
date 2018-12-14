@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.loginLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.loginBox = new System.Windows.Forms.TextBox();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.infoBox = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.reconnectButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -92,11 +90,6 @@
             this.infoBox.TabIndex = 6;
             this.infoBox.Text = "Placeholder";
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // reconnectButton
             // 
             this.reconnectButton.Location = new System.Drawing.Point(121, 104);
@@ -119,6 +112,8 @@
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.loginLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.ResumeLayout(false);
@@ -134,7 +129,6 @@
         private System.Windows.Forms.TextBox loginBox;
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Label infoBox;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Button reconnectButton;
     }
 }

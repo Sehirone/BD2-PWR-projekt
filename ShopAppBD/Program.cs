@@ -22,7 +22,7 @@ namespace ShopAppBD
             loginForm.ShowDialog();
             if(user.GetIsLogged())
             {
-                Application.Run(new Form1(user));
+                Application.Run(new MainForm(user));
             }
         }
     }
