@@ -55,7 +55,8 @@ namespace ShopAppBD
 
         private void itemsList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            // TO DO - set selected item to chosen product 
+            // TO DO - set selected item to chosen product and close Dialog box
+            this.Close();
         }
     }
 }
