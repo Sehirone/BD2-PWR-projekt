@@ -17,6 +17,7 @@ namespace ShopAppBD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            // Creates user, shows initial dialog box for loging in, if successful runs main window
             User user = new User();
             LoginForm loginForm = new LoginForm(user);
             loginForm.ShowDialog();

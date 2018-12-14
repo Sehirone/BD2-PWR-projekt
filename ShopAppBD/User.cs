@@ -10,7 +10,7 @@ namespace ShopAppBD
     {
         private string login;
         private string password;
-        private int privilageLevel;
+        private int privilageLevel; // Higher level = more options in app
         private Boolean isLogged = false;
 
         public void SetLogin(string login)

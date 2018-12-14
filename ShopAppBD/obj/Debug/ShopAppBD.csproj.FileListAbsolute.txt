@@ -24,3 +24,5 @@ C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\BD2-PWR-projekt\ShopAppBD\obj\Debug\S
 C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\BD2-PWR-projekt\ShopAppBD\obj\Debug\ShopAppBD.exe
 C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\BD2-PWR-projekt\ShopAppBD\obj\Debug\ShopAppBD.pdb
 C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\BD2-PWR-projekt\ShopAppBD\obj\Debug\ShopAppBD.MainForm.resources
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\BD2-PWR-projekt\ShopAppBD\obj\Debug\ShopAppBD.CheckProductForm.resources
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\BD2-PWR-projekt\ShopAppBD\obj\Debug\ShopAppBD.SellingForm.resources
