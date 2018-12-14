@@ -1,0 +1,13 @@
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\bin\Debug\ShopAppBD.exe.config
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\bin\Debug\ShopAppBD.exe
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\bin\Debug\ShopAppBD.pdb
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\obj\Debug\ShopAppBD.csprojAssemblyReference.cache
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\obj\Debug\ShopAppBD.Form1.resources
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\obj\Debug\ShopAppBD.LoginForm.resources
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\obj\Debug\ShopAppBD.Properties.Resources.resources
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\obj\Debug\ShopAppBD.csproj.GenerateResource.cache
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\obj\Debug\ShopAppBD.csproj.CoreCompileInputs.cache
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\obj\Debug\ShopAppBD.csproj.CopyComplete
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\obj\Debug\ShopAppBD.exe
+C:\Kajetan\Studia\5 semestr\Bazy\ShopAppBD\ShopAppBD\obj\Debug\ShopAppBD.pdb
