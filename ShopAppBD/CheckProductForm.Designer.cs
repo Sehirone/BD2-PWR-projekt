@@ -38,6 +38,7 @@
             this.priceColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.discountColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.quantityColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.idColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // productNameBox
@@ -85,36 +86,46 @@
             // itemsList
             // 
             this.itemsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.idColumn,
             this.nameColumn,
             this.priceColumn,
             this.discountColumn,
             this.quantityColumn});
+            this.itemsList.FullRowSelect = true;
+            this.itemsList.GridLines = true;
+            this.itemsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.itemsList.Location = new System.Drawing.Point(12, 57);
+            this.itemsList.MultiSelect = false;
             this.itemsList.Name = "itemsList";
             this.itemsList.Size = new System.Drawing.Size(448, 381);
             this.itemsList.TabIndex = 5;
             this.itemsList.UseCompatibleStateImageBehavior = false;
             this.itemsList.View = System.Windows.Forms.View.Details;
+            this.itemsList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.itemsList_ItemSelectionChanged);
             // 
             // nameColumn
             // 
             this.nameColumn.Text = "Nazwa";
-            this.nameColumn.Width = 140;
+            this.nameColumn.Width = 120;
             // 
             // priceColumn
             // 
             this.priceColumn.Text = "Cena";
-            this.priceColumn.Width = 75;
+            this.priceColumn.Width = 50;
             // 
             // discountColumn
             // 
             this.discountColumn.Text = "Rabat";
-            this.discountColumn.Width = 71;
+            this.discountColumn.Width = 50;
             // 
             // quantityColumn
             // 
             this.quantityColumn.Text = "Ilość";
-            this.quantityColumn.Width = 66;
+            // 
+            // idColumn
+            // 
+            this.idColumn.Text = "Id";
+            this.idColumn.Width = 40;
             // 
             // CheckProductForm
             // 
@@ -148,5 +159,6 @@
         private System.Windows.Forms.ColumnHeader priceColumn;
         private System.Windows.Forms.ColumnHeader discountColumn;
         private System.Windows.Forms.ColumnHeader quantityColumn;
+        private System.Windows.Forms.ColumnHeader idColumn;
     }
 }

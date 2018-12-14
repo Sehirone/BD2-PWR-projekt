@@ -15,10 +15,19 @@ namespace ShopAppBD
     public partial class CheckProductForm : Form
     {
         OracleConnection conn;
+        Product chosenProduct;
 
         public CheckProductForm(OracleConnection conn)
         {
             this.conn = conn;
+            chosenProduct = new Product();
+            InitializeComponent();
+        }
+
+        public CheckProductForm(OracleConnection conn, Product chosenProduct)
+        {
+            this.conn = conn;
+            this.chosenProduct = chosenProduct;
             InitializeComponent();
         }
 
@@ -33,15 +42,20 @@ namespace ShopAppBD
 
                 OracleCommand getUserCmd = new OracleCommand();
                 getUserCmd.Connection = conn;
-                getUserCmd.CommandText = "select PRODUCT_NAME,BARCODE,PRICE,PRICE_CUT,QUANTITY from PRODUKTY WHERE BARCODE = \'" + barCode + "\' OR PRODUCT_NAME LIKE \'%" + productName + "%\'";
+                getUserCmd.CommandText = "select PRODUCT_ID,PRODUCT_NAME,BARCODE,PRICE,PRICE_CUT,QUANTITY from PRODUKTY WHERE BARCODE = \'" + barCode + "\' OR PRODUCT_NAME LIKE \'%" + productName + "%\'";
                 OracleDataReader dataReader = getUserCmd.ExecuteReader();
 
                 while (dataReader.Read())
                 {
-                    string[] row = { dataReader.GetString(0), Convert.ToString(dataReader.GetDouble(2)), Convert.ToString(1.0 - dataReader.GetDouble(3)), Convert.ToString(dataReader.GetInt32(4)) };
+                    string[] row = { Convert.ToString(dataReader.GetInt32(0)), dataReader.GetString(1), Convert.ToString(dataReader.GetDouble(3)), Convert.ToString(1.0 - dataReader.GetDouble(4)), Convert.ToString(dataReader.GetInt32(5)) };
                     itemsList.Items.Add(new ListViewItem(row));
                 }
             }
+        }
+
+        private void itemsList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            // TO DO - set selected item to chosen product 
         }
     }
 }

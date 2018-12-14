@@ -76,21 +76,17 @@ namespace ShopAppBD
             {
                 sellingButton.Enabled = true;
                 checkProductButton.Enabled = true;
+                showRotaButton.Enabled = true;
             }
             if(privilageLevel >= 2)
             {
                 transactionHistButton.Enabled = true;
+                addDeliveryButton.Enabled = true;
             }
             if(privilageLevel >= 3)
             {
                 employeesButton.Enabled = true;
             }
-        }
-
-        // close application if main form is closed
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
         }
 
         private void checkProductButton_Click(object sender, EventArgs e)
@@ -103,6 +99,11 @@ namespace ShopAppBD
         {
             SellingForm sellingForm = new SellingForm(conn);
             sellingForm.ShowDialog();
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            // TO DO 
         }
     }
 }
