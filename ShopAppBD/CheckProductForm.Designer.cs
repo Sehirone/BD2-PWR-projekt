@@ -34,11 +34,12 @@
             this.barCodeLabel = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.itemsList = new System.Windows.Forms.ListView();
+            this.idColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.priceColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.discountColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.quantityColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.idColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.barcodeColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // productNameBox
@@ -90,23 +91,29 @@
             this.nameColumn,
             this.priceColumn,
             this.discountColumn,
-            this.quantityColumn});
+            this.quantityColumn,
+            this.barcodeColumn});
             this.itemsList.FullRowSelect = true;
             this.itemsList.GridLines = true;
             this.itemsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.itemsList.Location = new System.Drawing.Point(12, 57);
             this.itemsList.MultiSelect = false;
             this.itemsList.Name = "itemsList";
-            this.itemsList.Size = new System.Drawing.Size(448, 381);
+            this.itemsList.Size = new System.Drawing.Size(555, 381);
             this.itemsList.TabIndex = 5;
             this.itemsList.UseCompatibleStateImageBehavior = false;
             this.itemsList.View = System.Windows.Forms.View.Details;
             this.itemsList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.itemsList_ItemSelectionChanged);
             // 
+            // idColumn
+            // 
+            this.idColumn.Text = "Id";
+            this.idColumn.Width = 35;
+            // 
             // nameColumn
             // 
             this.nameColumn.Text = "Nazwa";
-            this.nameColumn.Width = 120;
+            this.nameColumn.Width = 90;
             // 
             // priceColumn
             // 
@@ -122,10 +129,10 @@
             // 
             this.quantityColumn.Text = "Ilość";
             // 
-            // idColumn
+            // barcodeColumn
             // 
-            this.idColumn.Text = "Id";
-            this.idColumn.Width = 40;
+            this.barcodeColumn.Text = "Kod kreskowy";
+            this.barcodeColumn.Width = 121;
             // 
             // CheckProductForm
             // 
@@ -160,5 +167,6 @@
         private System.Windows.Forms.ColumnHeader discountColumn;
         private System.Windows.Forms.ColumnHeader quantityColumn;
         private System.Windows.Forms.ColumnHeader idColumn;
+        private System.Windows.Forms.ColumnHeader barcodeColumn;
     }
 }

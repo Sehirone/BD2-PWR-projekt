@@ -16,11 +16,13 @@ namespace ShopAppBD
     {
         OracleConnection conn;
         Product searchedProduct;
+        Double totalCost;
 
         public SellingForm(OracleConnection conn)
         {
             this.conn = conn;
             searchedProduct = new Product();
+            totalCost = 0;
             InitializeComponent();
         }
 
@@ -28,6 +30,36 @@ namespace ShopAppBD
         {
             CheckProductForm checkProductForm = new CheckProductForm(conn, searchedProduct);
             checkProductForm.ShowDialog();
+            if(checkProductForm.DialogResult == DialogResult.Yes)
+            {
+                string[] row = {Convert.ToString(searchedProduct.ProductId),
+                                searchedProduct.ProductName,
+                                Convert.ToString(searchedProduct.Price),
+                                Convert.ToString(1.0 - searchedProduct.PriceCut),
+                                Convert.ToString(searchedProduct.Quantity),
+                                searchedProduct.BarCode};
+                itemsList.Items.Add(new ListViewItem(row));
+                totalCost += searchedProduct.Price * searchedProduct.PriceCut;
+                totalCostBox.Text = "Cena łącznie: " + Convert.ToString(totalCost);
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in itemsList.SelectedItems)
+            {
+                totalCost -= Convert.ToDouble(item.SubItems[2].Text) * (1.0 - Convert.ToDouble(item.SubItems[3].Text));
+                itemsList.Items.Remove(item);
+            }
+            totalCostBox.Text = "Cena łącznie: " + Convert.ToString(totalCost);
+        }
+
+        private void sellButton_Click(object sender, EventArgs e)
+        {
+            // TO DO update database
+            itemsList.Items.Clear();
+            totalCost = 0;
+            totalCostBox.Text = "Cena łącznie: " + Convert.ToString(totalCost);
         }
     }
 }

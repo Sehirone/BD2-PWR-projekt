@@ -47,7 +47,7 @@ namespace ShopAppBD
 
                 while (dataReader.Read())
                 {
-                    string[] row = { Convert.ToString(dataReader.GetInt32(0)), dataReader.GetString(1), Convert.ToString(dataReader.GetDouble(3)), Convert.ToString(1.0 - dataReader.GetDouble(4)), Convert.ToString(dataReader.GetInt32(5)) };
+                    string[] row = { Convert.ToString(dataReader.GetInt32(0)), dataReader.GetString(1), Convert.ToString(dataReader.GetDouble(3)), Convert.ToString(1.0 - dataReader.GetDouble(4)), Convert.ToString(dataReader.GetInt32(5)) , dataReader.GetString(2)};
                     itemsList.Items.Add(new ListViewItem(row));
                 }
             }
@@ -55,7 +55,13 @@ namespace ShopAppBD
 
         private void itemsList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            // TO DO - set selected item to chosen product and close Dialog box
+            chosenProduct.ProductId = Convert.ToInt32(itemsList.SelectedItems[0].SubItems[0].Text);
+            chosenProduct.ProductName = itemsList.SelectedItems[0].SubItems[1].Text;
+            chosenProduct.Price = Convert.ToDouble(itemsList.SelectedItems[0].SubItems[2].Text);
+            chosenProduct.PriceCut = 1.0 - Convert.ToDouble(itemsList.SelectedItems[0].SubItems[3].Text);
+            chosenProduct.Quantity = Convert.ToInt32(itemsList.SelectedItems[0].SubItems[4].Text);
+            chosenProduct.BarCode = itemsList.SelectedItems[0].SubItems[5].Text;
+            this.DialogResult = DialogResult.Yes;
             this.Close();
         }
     }
