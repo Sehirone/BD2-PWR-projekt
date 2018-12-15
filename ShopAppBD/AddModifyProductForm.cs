@@ -142,10 +142,21 @@ namespace ShopAppBD
                 {
                     infoBox.Text = "Aby edytować produkt najpierw go wyszukaj!";
                     return;
+                } else
+                {
+                    OracleCommand modifyProduct = new OracleCommand();
+                    modifyProduct.Connection = conn;
+                    modifyProduct.CommandText = "UPDATE PRODUKTY SET PRODUCT_NAME = :p1, BARCODE = :p2, PRICE = :p3, PRICE_CUT = :p4, QUANTITY = :p5 WHERE PRODUCT_ID = :p6";
+                    modifyProduct.Parameters.Add("p1", OracleDbType.Varchar2).Value = nameBox.Text;
+                    modifyProduct.Parameters.Add("p2", OracleDbType.Varchar2).Value = barcodeBox.Text;
+                    modifyProduct.Parameters.Add("p3", OracleDbType.Double).Value = double.Parse(priceBox.Text);
+                    modifyProduct.Parameters.Add("p4", OracleDbType.Double).Value = 1.0 - double.Parse(pricecutBox.Text);
+                    modifyProduct.Parameters.Add("p5", OracleDbType.Int32).Value = int.Parse(quantityBox.Text);
+                    modifyProduct.Parameters.Add("p6", OracleDbType.Int32).Value = product.ProductId;
+                    int updates = modifyProduct.ExecuteNonQuery();
+                    infoBox.Text = "Zmodyfikowano produkt!";
+                    reset();
                 }
-
-
-                reset();
             }
         }
     }
