@@ -40,6 +40,7 @@ namespace ShopAppBD
                                 searchedProduct.BarCode};
                 itemsList.Items.Add(new ListViewItem(row));
                 totalCost += searchedProduct.Price * searchedProduct.PriceCut;
+                totalCost = Math.Round(totalCost, 2);
                 totalCostBox.Text = "Cena łącznie: " + Convert.ToString(totalCost);
             }
         }
@@ -49,6 +50,7 @@ namespace ShopAppBD
             foreach (ListViewItem item in itemsList.SelectedItems)
             {
                 totalCost -= Convert.ToDouble(item.SubItems[2].Text) * (1.0 - Convert.ToDouble(item.SubItems[3].Text));
+                totalCost = Math.Round(totalCost, 2);
                 itemsList.Items.Remove(item);
             }
             totalCostBox.Text = "Cena łącznie: " + Convert.ToString(totalCost);
@@ -59,6 +61,17 @@ namespace ShopAppBD
             // TO DO update database
             itemsList.Items.Clear();
             totalCost = 0;
+            totalCostBox.Text = "Cena łącznie: " + Convert.ToString(totalCost);
+        }
+
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in itemsList.SelectedItems)
+            {
+                itemsList.Items.Add((ListViewItem)item.Clone());
+                totalCost += Convert.ToDouble(item.SubItems[2].Text) * (1.0 - Convert.ToDouble(item.SubItems[3].Text));
+                totalCost = Math.Round(totalCost, 2);
+            }
             totalCostBox.Text = "Cena łącznie: " + Convert.ToString(totalCost);
         }
     }

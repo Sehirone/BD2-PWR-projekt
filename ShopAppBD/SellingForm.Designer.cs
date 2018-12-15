@@ -39,6 +39,7 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.sellButton = new System.Windows.Forms.Button();
             this.totalCostBox = new System.Windows.Forms.Label();
+            this.copyButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // searchProductButton
@@ -63,6 +64,7 @@
             this.itemsList.FullRowSelect = true;
             this.itemsList.GridLines = true;
             this.itemsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.itemsList.HideSelection = false;
             this.itemsList.Location = new System.Drawing.Point(12, 12);
             this.itemsList.Name = "itemsList";
             this.itemsList.Size = new System.Drawing.Size(671, 363);
@@ -101,7 +103,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(689, 67);
+            this.deleteButton.Location = new System.Drawing.Point(689, 122);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(99, 49);
             this.deleteButton.TabIndex = 7;
@@ -128,11 +130,22 @@
             this.totalCostBox.TabIndex = 9;
             this.totalCostBox.Text = "Cena łącznie: 0";
             // 
+            // copyButton
+            // 
+            this.copyButton.Location = new System.Drawing.Point(689, 67);
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(99, 49);
+            this.copyButton.TabIndex = 10;
+            this.copyButton.Text = "Powiel produkt";
+            this.copyButton.UseVisualStyleBackColor = true;
+            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
+            // 
             // SellingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 407);
+            this.Controls.Add(this.copyButton);
             this.Controls.Add(this.totalCostBox);
             this.Controls.Add(this.sellButton);
             this.Controls.Add(this.deleteButton);
@@ -160,5 +173,6 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button sellButton;
         private System.Windows.Forms.Label totalCostBox;
+        private System.Windows.Forms.Button copyButton;
     }
 }
