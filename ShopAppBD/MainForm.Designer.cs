@@ -141,6 +141,7 @@
             this.addModifyProductButton.TabIndex = 9;
             this.addModifyProductButton.Text = "Dodaj/zmień produkt";
             this.addModifyProductButton.UseVisualStyleBackColor = true;
+            this.addModifyProductButton.Click += new System.EventHandler(this.addModifyProductButton_Click);
             // 
             // MainForm
             // 

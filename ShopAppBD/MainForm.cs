@@ -25,7 +25,7 @@ namespace ShopAppBD
             // ******************************************************************************
             // !!! HERE should be a user with specific privilages depending on user->privilageLevel !!!
             // ******************************************************************************
-            connectionString = "Data Source=DESKTOP-774776S;User Id=SYSTEM;Password=system_password;";
+            connectionString = "Data Source=127.0.0.1:1521;User Id=SYSTEM;Password=system_password;";
             conn = new OracleConnection(connectionString);
             conn.Open();
             InitializeComponent();
@@ -123,6 +123,12 @@ namespace ShopAppBD
                 reconnectButton_Click(new object(), new EventArgs());
                 this.Visible = true;
             }
+        }
+
+        private void addModifyProductButton_Click(object sender, EventArgs e)
+        {
+            AddModifyProductForm addModifyProductForm = new AddModifyProductForm(conn);
+            addModifyProductForm.ShowDialog();
         }
     }
 }

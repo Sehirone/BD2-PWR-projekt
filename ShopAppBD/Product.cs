@@ -8,7 +8,7 @@ namespace ShopAppBD
 {
     public class Product
     {
-        private int productId;
+        private int productId = 0;
         private string productName;
         private string barCode;
         private double price;

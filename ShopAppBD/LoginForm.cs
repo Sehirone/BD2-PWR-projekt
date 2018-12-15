@@ -20,7 +20,7 @@ namespace ShopAppBD
         // ******************************************************************************
         // !!! HERE should be a user with only SELECT pracownicy/stanowiska privilage !!!
         // ******************************************************************************
-        string connectionString = "Data Source=DESKTOP-774776S;User Id=SYSTEM;Password=system_password;";
+        string connectionString = "Data Source=127.0.0.1:1521;User Id=SYSTEM;Password=system_password;";
 
         public LoginForm(User user)
         {

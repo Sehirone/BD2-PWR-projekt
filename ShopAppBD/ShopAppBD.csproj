@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddModifyProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddModifyProductForm.Designer.cs">
+      <DependentUpon>AddModifyProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CheckProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
       <DependentUpon>SellingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="AddModifyProductForm.resx">
+      <DependentUpon>AddModifyProductForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CheckProductForm.resx">
       <DependentUpon>CheckProductForm.cs</DependentUpon>
     </EmbeddedResource>
