@@ -37,6 +37,7 @@
             this.logoutButton = new System.Windows.Forms.Button();
             this.showRotaButton = new System.Windows.Forms.Button();
             this.addDeliveryButton = new System.Windows.Forms.Button();
+            this.addModifyProductButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // infoBox
@@ -64,7 +65,7 @@
             this.sellingButton.Enabled = false;
             this.sellingButton.Location = new System.Drawing.Point(12, 12);
             this.sellingButton.Name = "sellingButton";
-            this.sellingButton.Size = new System.Drawing.Size(99, 49);
+            this.sellingButton.Size = new System.Drawing.Size(111, 49);
             this.sellingButton.TabIndex = 2;
             this.sellingButton.Text = "Sprzedaż";
             this.sellingButton.UseVisualStyleBackColor = true;
@@ -73,9 +74,9 @@
             // transactionHistButton
             // 
             this.transactionHistButton.Enabled = false;
-            this.transactionHistButton.Location = new System.Drawing.Point(222, 12);
+            this.transactionHistButton.Location = new System.Drawing.Point(363, 12);
             this.transactionHistButton.Name = "transactionHistButton";
-            this.transactionHistButton.Size = new System.Drawing.Size(99, 49);
+            this.transactionHistButton.Size = new System.Drawing.Size(111, 49);
             this.transactionHistButton.TabIndex = 3;
             this.transactionHistButton.Text = "Historia transkacji";
             this.transactionHistButton.UseVisualStyleBackColor = true;
@@ -85,7 +86,7 @@
             this.employeesButton.Enabled = false;
             this.employeesButton.Location = new System.Drawing.Point(12, 67);
             this.employeesButton.Name = "employeesButton";
-            this.employeesButton.Size = new System.Drawing.Size(99, 49);
+            this.employeesButton.Size = new System.Drawing.Size(111, 49);
             this.employeesButton.TabIndex = 4;
             this.employeesButton.Text = "Pracownicy";
             this.employeesButton.UseVisualStyleBackColor = true;
@@ -93,9 +94,9 @@
             // checkProductButton
             // 
             this.checkProductButton.Enabled = false;
-            this.checkProductButton.Location = new System.Drawing.Point(117, 12);
+            this.checkProductButton.Location = new System.Drawing.Point(129, 12);
             this.checkProductButton.Name = "checkProductButton";
-            this.checkProductButton.Size = new System.Drawing.Size(99, 49);
+            this.checkProductButton.Size = new System.Drawing.Size(111, 49);
             this.checkProductButton.TabIndex = 5;
             this.checkProductButton.Text = "Sprawdź produkt";
             this.checkProductButton.UseVisualStyleBackColor = true;
@@ -114,9 +115,9 @@
             // showRotaButton
             // 
             this.showRotaButton.Enabled = false;
-            this.showRotaButton.Location = new System.Drawing.Point(117, 67);
+            this.showRotaButton.Location = new System.Drawing.Point(129, 67);
             this.showRotaButton.Name = "showRotaButton";
-            this.showRotaButton.Size = new System.Drawing.Size(99, 49);
+            this.showRotaButton.Size = new System.Drawing.Size(111, 49);
             this.showRotaButton.TabIndex = 7;
             this.showRotaButton.Text = "Wyświetl grafik";
             this.showRotaButton.UseVisualStyleBackColor = true;
@@ -126,16 +127,27 @@
             this.addDeliveryButton.Enabled = false;
             this.addDeliveryButton.Location = new System.Drawing.Point(12, 122);
             this.addDeliveryButton.Name = "addDeliveryButton";
-            this.addDeliveryButton.Size = new System.Drawing.Size(99, 49);
+            this.addDeliveryButton.Size = new System.Drawing.Size(111, 49);
             this.addDeliveryButton.TabIndex = 8;
             this.addDeliveryButton.Text = "Dodaj dostawe";
             this.addDeliveryButton.UseVisualStyleBackColor = true;
+            // 
+            // addModifyProductButton
+            // 
+            this.addModifyProductButton.Enabled = false;
+            this.addModifyProductButton.Location = new System.Drawing.Point(246, 12);
+            this.addModifyProductButton.Name = "addModifyProductButton";
+            this.addModifyProductButton.Size = new System.Drawing.Size(111, 49);
+            this.addModifyProductButton.TabIndex = 9;
+            this.addModifyProductButton.Text = "Dodaj/zmień produkt";
+            this.addModifyProductButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.addModifyProductButton);
             this.Controls.Add(this.addDeliveryButton);
             this.Controls.Add(this.showRotaButton);
             this.Controls.Add(this.logoutButton);
@@ -163,6 +175,7 @@
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.Button showRotaButton;
         private System.Windows.Forms.Button addDeliveryButton;
+        private System.Windows.Forms.Button addModifyProductButton;
     }
 }
 

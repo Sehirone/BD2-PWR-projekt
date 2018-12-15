@@ -80,11 +80,13 @@ namespace ShopAppBD
                 transactionHistButton.Enabled = false;
                 addDeliveryButton.Enabled = false;
                 employeesButton.Enabled = false;
+                addModifyProductButton.Enabled = false;
             }
             if(privilageLevel >= 2)
             {
                 transactionHistButton.Enabled = true;
                 addDeliveryButton.Enabled = true;
+                addModifyProductButton.Enabled = true;
                 employeesButton.Enabled = false;
             }
             if(privilageLevel >= 3)
