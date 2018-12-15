@@ -25,16 +25,13 @@ namespace ShopAppBD
             infoBox.Text = "";
         }
 
+        // checks if data entered in boxes is correct and paints the labels with error color
         private Boolean checkDataCorrectness()
         {
             Boolean isDataCorrect = true;
             double tempDoubleResult;
             int tempIntResult;
-            nameLabel.ForeColor = Color.Black;
-            priceLabel.ForeColor = Color.Black;
-            pricecutLabel.ForeColor = Color.Black;
-            quantityLabel.ForeColor = Color.Black;
-            barcodeLabel.ForeColor = Color.Black;
+            clearLabels();
             if (nameBox.Text == "")
             {
                 nameLabel.ForeColor = Color.Red;
@@ -80,6 +77,7 @@ namespace ShopAppBD
             return isDataCorrect;
         }
 
+        // clears boxes text and labels error color as well
         private void clearBoxes()
         {
             nameBox.Text = "";
@@ -87,14 +85,27 @@ namespace ShopAppBD
             priceBox.Text = "";
             pricecutBox.Text = "";
             quantityBox.Text = "";
+            clearLabels();
         }
 
+        // clears labels from showing error color
+        private void clearLabels()
+        {
+            nameLabel.ForeColor = Color.Black;
+            priceLabel.ForeColor = Color.Black;
+            pricecutLabel.ForeColor = Color.Black;
+            quantityLabel.ForeColor = Color.Black;
+            barcodeLabel.ForeColor = Color.Black;
+        }
+
+        // resets boxes errors and data and creates new product so that we dont modify the old one
         private void reset()
         {
             clearBoxes();
             product = new Product();
         }
 
+        // opens search dialog box, if product chosen sets boxes to it's data, if no product chosen then resets boxes
         private void searchButton_Click(object sender, EventArgs e)
         {
             CheckProductForm checkProductForm = new CheckProductForm(conn, product);
@@ -107,9 +118,15 @@ namespace ShopAppBD
                 quantityBox.Text = Convert.ToString(product.Quantity);
                 barcodeBox.Text = product.BarCode;
                 checkDataCorrectness();
+                infoBox.Text = "Znaleziono produkt!";
+            } else
+            {
+                reset();
+                infoBox.Text = "Przerwano wyszukiwanie!";
             }
         }
 
+        // adds new product to database using filled boxes if these are filled correctly
         private void addButton_Click(object sender, EventArgs e)
         {
             if(!checkDataCorrectness())
@@ -131,6 +148,7 @@ namespace ShopAppBD
             }
         }
 
+        // modifies product in database, requires searching product first so we have it's id
         private void modifyButton_Click(object sender, EventArgs e)
         {
             if (!checkDataCorrectness())
