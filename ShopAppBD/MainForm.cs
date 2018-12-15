@@ -71,17 +71,21 @@ namespace ShopAppBD
         // enables certain buttons basend on privilages level
         private void setupButtonPrivilages()
         {
-            int privilageLevel = user.GetPrivilageLevel();
+            int privilageLevel = user.PrivilageLevel;
             if(privilageLevel >= 1)
             {
                 sellingButton.Enabled = true;
                 checkProductButton.Enabled = true;
                 showRotaButton.Enabled = true;
+                transactionHistButton.Enabled = false;
+                addDeliveryButton.Enabled = false;
+                employeesButton.Enabled = false;
             }
             if(privilageLevel >= 2)
             {
                 transactionHistButton.Enabled = true;
                 addDeliveryButton.Enabled = true;
+                employeesButton.Enabled = false;
             }
             if(privilageLevel >= 3)
             {
@@ -103,7 +107,20 @@ namespace ShopAppBD
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            // TO DO 
+            conn.Dispose();
+            this.Visible = false;
+            LoginForm loginForm = new LoginForm(user);
+            loginForm.ShowDialog();
+            if(!user.IsLogged)
+            {
+                this.Close();
+            } else
+            {
+
+                setupButtonPrivilages();
+                reconnectButton_Click(new object(), new EventArgs());
+                this.Visible = true;
+            }
         }
     }
 }

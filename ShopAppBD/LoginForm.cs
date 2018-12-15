@@ -26,6 +26,7 @@ namespace ShopAppBD
         {
             // setup connection with database
             this.user = user;
+            user.IsLogged = false;
             conn = new OracleConnection(connectionString);
             conn.Open();
             InitializeComponent();
@@ -50,8 +51,8 @@ namespace ShopAppBD
             // tries to connect user if database connection is set -- if successful closes dialogBox
             if (conn.State == ConnectionState.Open)
             {
-                user.SetLogin(loginBox.Text);
-                user.SetPassword(passwordBox.Text);
+                user.Login = loginBox.Text;
+                user.Password = passwordBox.Text;
 
                 OracleCommand getUserCmd = new OracleCommand();
                 getUserCmd.Connection = conn;
@@ -62,23 +63,23 @@ namespace ShopAppBD
                 while (dataReader.Read())
                 {
                     // if user found in database, set islogged and privilage level for app
-                    if (Convert.ToString(dataReader.GetInt32(0)) == user.GetLogin() && dataReader.GetString(1) == user.GetPassword())
+                    if (Convert.ToString(dataReader.GetInt32(0)) == user.Login && dataReader.GetString(1) == user.Password)
                     {
                         infoBox.Text = "Zalogowano Pomyślnie!";
-                        user.SetIsLogged(true);
+                        user.IsLogged = true;
                         string jobId = dataReader.GetString(2);
                         OracleCommand getUserPrivilageCmd = new OracleCommand();
                         getUserPrivilageCmd.Connection = conn;
                         getUserPrivilageCmd.CommandText = "select PRIVILAGE_LEVEL from STANOWISKA where JOB_ID = \'" + jobId + '\'';
                         dataReader = getUserPrivilageCmd.ExecuteReader();
                         dataReader.Read();
-                        user.SetPrivilageLevel(dataReader.GetInt32(0));
+                        user.PrivilageLevel = dataReader.GetInt32(0);
                         this.DialogResult = DialogResult.Yes;
                         this.Close();
                     } else
                     {
                         infoBox.Text = "Dane logowania nieprawidłowe!";
-                        user.SetIsLogged(false);
+                        user.IsLogged = false;
                     }
                 }
             }

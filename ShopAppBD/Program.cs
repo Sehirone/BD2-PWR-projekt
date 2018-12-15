@@ -21,7 +21,7 @@ namespace ShopAppBD
             User user = new User();
             LoginForm loginForm = new LoginForm(user);
             loginForm.ShowDialog();
-            if(user.GetIsLogged())
+            if(user.IsLogged)
             {
                 Application.Run(new MainForm(user));
             }

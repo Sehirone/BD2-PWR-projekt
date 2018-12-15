@@ -13,44 +13,9 @@ namespace ShopAppBD
         private int privilageLevel; // Higher level = more options in app
         private Boolean isLogged = false;
 
-        public void SetLogin(string login)
-        {
-            this.login = login;
-        }
-
-        public void SetPassword(string password)
-        {
-            this.password = password;
-        }
-
-        public string GetPassword()
-        {
-            return this.password;
-        }
-
-        public string GetLogin()
-        {
-            return this.login;
-        }
-
-        public void SetPrivilageLevel(int privilageLevel)
-        {
-            this.privilageLevel = privilageLevel;
-        }
-
-        public int GetPrivilageLevel()
-        {
-            return this.privilageLevel;
-        }
-
-        public void SetIsLogged(Boolean isLogged)
-        {
-            this.isLogged = isLogged;
-        }
-
-        public Boolean GetIsLogged()
-        {
-            return this.isLogged;
-        }
+        public bool IsLogged { get => isLogged; set => isLogged = value; }
+        public int PrivilageLevel { get => privilageLevel; set => privilageLevel = value; }
+        public string Password { get => password; set => password = value; }
+        public string Login { get => login; set => login = value; }
     }
 }

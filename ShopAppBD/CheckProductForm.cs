@@ -40,10 +40,10 @@ namespace ShopAppBD
                 string productName = productNameBox.Text == "" ? "*!@NOTHING TO LOOK FOR@!*" : productNameBox.Text;
                 string barCode = barCodeBox.Text;
 
-                OracleCommand getUserCmd = new OracleCommand();
-                getUserCmd.Connection = conn;
-                getUserCmd.CommandText = "select PRODUCT_ID,PRODUCT_NAME,BARCODE,PRICE,PRICE_CUT,QUANTITY from PRODUKTY WHERE BARCODE = \'" + barCode + "\' OR PRODUCT_NAME LIKE \'%" + productName + "%\'";
-                OracleDataReader dataReader = getUserCmd.ExecuteReader();
+                OracleCommand getProductCmd = new OracleCommand();
+                getProductCmd.Connection = conn;
+                getProductCmd.CommandText = "select PRODUCT_ID,PRODUCT_NAME,BARCODE,PRICE,PRICE_CUT,QUANTITY from PRODUKTY WHERE BARCODE = \'" + barCode + "\' OR PRODUCT_NAME LIKE \'%" + productName + "%\'";
+                OracleDataReader dataReader = getProductCmd.ExecuteReader();
 
                 while (dataReader.Read())
                 {
