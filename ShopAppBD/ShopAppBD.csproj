@@ -83,6 +83,12 @@
     <Compile Include="SellingForm.Designer.cs">
       <DependentUpon>SellingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowRotaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowRotaForm.Designer.cs">
+      <DependentUpon>ShowRotaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <EmbeddedResource Include="AddModifyProductForm.resx">
       <DependentUpon>AddModifyProductForm.cs</DependentUpon>
@@ -107,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="SellingForm.resx">
       <DependentUpon>SellingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowRotaForm.resx">
+      <DependentUpon>ShowRotaForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

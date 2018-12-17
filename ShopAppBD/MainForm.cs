@@ -130,5 +130,11 @@ namespace ShopAppBD
             AddModifyProductForm addModifyProductForm = new AddModifyProductForm(conn);
             addModifyProductForm.ShowDialog();
         }
+
+        private void showRotaButton_Click(object sender, EventArgs e)
+        {
+            ShowRotaForm showRotaForm = new ShowRotaForm(conn, user);
+            showRotaForm.ShowDialog();
+        }
     }
 }

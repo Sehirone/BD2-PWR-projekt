@@ -121,6 +121,7 @@
             this.showRotaButton.TabIndex = 7;
             this.showRotaButton.Text = "Wyświetl grafik";
             this.showRotaButton.UseVisualStyleBackColor = true;
+            this.showRotaButton.Click += new System.EventHandler(this.showRotaButton_Click);
             // 
             // addDeliveryButton
             // 

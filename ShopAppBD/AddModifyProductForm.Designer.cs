@@ -126,7 +126,7 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(144, 9);
+            this.addButton.Location = new System.Drawing.Point(218, 46);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(88, 51);
             this.addButton.TabIndex = 10;
@@ -136,7 +136,7 @@
             // 
             // modifyButton
             // 
-            this.modifyButton.Location = new System.Drawing.Point(144, 123);
+            this.modifyButton.Location = new System.Drawing.Point(218, 160);
             this.modifyButton.Name = "modifyButton";
             this.modifyButton.Size = new System.Drawing.Size(88, 51);
             this.modifyButton.TabIndex = 11;
@@ -146,7 +146,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(144, 66);
+            this.searchButton.Location = new System.Drawing.Point(218, 103);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(88, 51);
             this.searchButton.TabIndex = 12;
@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(318, 303);
             this.Controls.Add(this.infoBox);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.modifyButton);
