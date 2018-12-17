@@ -4,3 +4,5 @@
 .vs/ShopAppBD/v15/Server/sqlite3/storage.ide
 .vs/ShopAppBD/v15/Server/sqlite3/storage.ide-shm
 .vs/ShopAppBD/v15/Server/sqlite3/storage.ide-wal
+*.exe
+*.pdb

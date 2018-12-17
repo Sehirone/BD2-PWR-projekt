@@ -163,6 +163,18 @@ CREATE TABLE SPRZEDANE_RZECZY
       FROM   dual;
    END;
    /
+
+-- Trigger zmniejszajacy ilosc produktow na stanie o ilosc sprzedanego produktu
+   CREATE OR REPLACE TRIGGER sprzedaz_zmniejsz_ilosc
+   BEFORE INSERT ON SPRZEDANE_RZECZY
+   FOR EACH ROW
+   
+   BEGIN
+      UPDATE PRODUKTY
+      SET PRODUKTY.QUANTITY = PRODUKTY.QUANTITY - :new.ITEM_QUANTITY
+      WHERE PRODUKTY.PRODUCT_ID = :new.PRODUCT_ID;
+   END;
+   /
  
 ----------------------------------------------------------------------------
 --Tworzenie tabeli dostawcy
