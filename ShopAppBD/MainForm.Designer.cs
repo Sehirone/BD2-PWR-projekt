@@ -90,6 +90,7 @@
             this.employeesButton.TabIndex = 4;
             this.employeesButton.Text = "Pracownicy";
             this.employeesButton.UseVisualStyleBackColor = true;
+            this.employeesButton.Click += new System.EventHandler(this.employeesButton_Click);
             // 
             // checkProductButton
             // 

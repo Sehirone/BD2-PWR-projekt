@@ -136,5 +136,11 @@ namespace ShopAppBD
             ShowRotaForm showRotaForm = new ShowRotaForm(conn, user);
             showRotaForm.ShowDialog();
         }
+
+        private void employeesButton_Click(object sender, EventArgs e)
+        {
+            EmployeesForm employeesForm = new EmployeesForm(conn);
+            employeesForm.ShowDialog();
+        }
     }
 }
