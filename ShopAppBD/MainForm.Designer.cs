@@ -105,6 +105,7 @@
             // 
             // logoutButton
             // 
+            this.logoutButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.logoutButton.Location = new System.Drawing.Point(667, 374);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(121, 29);
@@ -149,6 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.logoutButton;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.addModifyProductButton);
             this.Controls.Add(this.addDeliveryButton);
