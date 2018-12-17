@@ -46,12 +46,19 @@ namespace ShopAppBD
 
         private void addEmployee_Click(object sender, EventArgs e)
         {
-            // TO DO create window to add new employee
+            AddModifyEmployeeForm addModifyEmployeeForm = new AddModifyEmployeeForm(conn);
+            addModifyEmployeeForm.ShowDialog();
+            populateView();
         }
 
         private void modifyEmployee_Click(object sender, EventArgs e)
         {
-            // TO DO create window to modify selected employee
+            if(employeesView.SelectedItems.Count > 0)
+            {
+                AddModifyEmployeeForm addModifyEmployeeForm = new AddModifyEmployeeForm(conn, (ListViewItem)employeesView.SelectedItems[0].Clone());
+                addModifyEmployeeForm.ShowDialog();
+                populateView();
+            }
         }
     }
 }

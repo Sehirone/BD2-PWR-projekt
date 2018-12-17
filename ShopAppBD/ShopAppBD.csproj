@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddModifyEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddModifyEmployeeForm.Designer.cs">
+      <DependentUpon>AddModifyEmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddModifyProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
       <DependentUpon>ShowRotaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="AddModifyEmployeeForm.resx">
+      <DependentUpon>AddModifyEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddModifyProductForm.resx">
       <DependentUpon>AddModifyProductForm.cs</DependentUpon>
     </EmbeddedResource>

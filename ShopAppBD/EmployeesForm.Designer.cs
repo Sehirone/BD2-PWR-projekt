@@ -117,6 +117,7 @@
             this.Controls.Add(this.modifyEmployee);
             this.Controls.Add(this.addEmployee);
             this.Controls.Add(this.employeesView);
+            this.MaximizeBox = false;
             this.Name = "EmployeesForm";
             this.Text = "EmployeesForm";
             this.ResumeLayout(false);

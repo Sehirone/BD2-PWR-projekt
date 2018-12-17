@@ -183,6 +183,7 @@
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.nameLabel);
+            this.MaximizeBox = false;
             this.Name = "AddModifyProductForm";
             this.Text = "AddModifyProductForm";
             this.ResumeLayout(false);
