@@ -15,12 +15,14 @@ namespace ShopAppBD
     public partial class SellingForm : Form
     {
         OracleConnection conn;
+        User user;
         Product searchedProduct;
         Double totalCost;
 
-        public SellingForm(OracleConnection conn)
+        public SellingForm(OracleConnection conn, User user)
         {
             this.conn = conn;
+            this.user = user;
             searchedProduct = new Product();
             totalCost = 0;
             InitializeComponent();
@@ -58,7 +60,43 @@ namespace ShopAppBD
 
         private void sellButton_Click(object sender, EventArgs e)
         {
-            // TO DO update database
+            OracleCommand addSale = new OracleCommand();
+            addSale.Connection = conn;
+            addSale.CommandText = "INSERT INTO SPRZEDAZE (EMPLOYEE_ID, SALE_PRICE) VALUES (:p1,:p2)";
+            addSale.Parameters.Add("p1", OracleDbType.Int32).Value = Int32.Parse(user.Login);
+            addSale.Parameters.Add("p2", OracleDbType.Double).Value = totalCost;
+            int updates = addSale.ExecuteNonQuery();
+
+            OracleCommand getInsertedId = new OracleCommand();
+            getInsertedId.Connection = conn;
+            getInsertedId.CommandText = "select max(sale_id) from SPRZEDAZE";
+            OracleDataReader dataReader = getInsertedId.ExecuteReader();
+            dataReader.Read();
+            int sale_id = dataReader.GetInt32(0);
+
+            while (itemsList.Items.Count > 0)
+            {
+                ListViewItem currentItem = (ListViewItem)itemsList.Items[0].Clone();
+                int itemsCount = 0;
+                foreach(ListViewItem item in itemsList.Items)
+                {
+                    if(currentItem.SubItems[0].Text == item.SubItems[0].Text)
+                    {
+                        itemsCount++;
+                        itemsList.Items[item.Index].Remove();
+                    }
+                }
+                OracleCommand addSoldItem = new OracleCommand();
+                addSoldItem.Connection = conn;
+                addSoldItem.CommandText = "INSERT INTO SPRZEDANE_RZECZY (SALE_ID, PRODUCT_ID, ITEM_QUANTITY) VALUES (:p1,:p2,:p3)";
+                addSoldItem.Parameters.Add("p1", OracleDbType.Int32).Value = sale_id;
+                addSoldItem.Parameters.Add("p2", OracleDbType.Double).Value = Double.Parse(currentItem.SubItems[0].Text);
+                addSoldItem.Parameters.Add("p3", OracleDbType.Int32).Value = itemsCount;
+                updates = addSoldItem.ExecuteNonQuery();
+            }
+
+
+            // Cleanup
             itemsList.Items.Clear();
             totalCost = 0;
             totalCostBox.Text = "Cena łącznie: " + Convert.ToString(totalCost);

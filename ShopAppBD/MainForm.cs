@@ -103,7 +103,7 @@ namespace ShopAppBD
 
         private void sellingButton_Click(object sender, EventArgs e)
         {
-            SellingForm sellingForm = new SellingForm(conn);
+            SellingForm sellingForm = new SellingForm(conn, user);
             sellingForm.ShowDialog();
         }
 
