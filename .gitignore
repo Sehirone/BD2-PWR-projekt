@@ -6,3 +6,5 @@
 .vs/ShopAppBD/v15/Server/sqlite3/storage.ide-wal
 *.exe
 *.pdb
+ShopAppBD/bin/Debug/ShopAppBD.exe.CodeAnalysisLog.xml
+ShopAppBD/bin/Debug/ShopAppBD.exe.lastcodeanalysissucceeded

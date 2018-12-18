@@ -147,6 +147,7 @@ namespace ShopAppBD
                 }
                 else
                 {
+                    Boolean isModified = false;
                     OracleCommand modifyEmployee = new OracleCommand();
                     modifyEmployee.Connection = conn;
                     modifyEmployee.CommandText = "UPDATE PRACOWNICY SET";
@@ -154,37 +155,51 @@ namespace ShopAppBD
                     {
                         modifyEmployee.CommandText += " FIRST_NAME = :name,";
                         modifyEmployee.Parameters.Add("name", OracleDbType.Varchar2).Value = nameBox.Text;
+                        isModified = true;
                     }
                     if(surnameBox.Text != employee.SubItems[3].Text)
                     {
                         modifyEmployee.CommandText += " LAST_NAME = :surname,";
                         modifyEmployee.Parameters.Add("surname", OracleDbType.Varchar2).Value = surnameBox.Text;
+                        isModified = true;
                     }
                     if(positionBox.Text != employee.SubItems[1].Text)
                     {
                         modifyEmployee.CommandText += " JOB_ID = :position,";
                         modifyEmployee.Parameters.Add("position", OracleDbType.Varchar2).Value = positionBox.Text;
+                        isModified = true;
                     }
                     if(hiredateBox.Text != employee.SubItems[4].Text) 
                     {
                         modifyEmployee.CommandText += " HIRE_DATE = :hiredate,";
                         modifyEmployee.Parameters.Add("hiredate", OracleDbType.Date).Value = hiredateBox.Text;
+                        isModified = true;
                     }
                     if(salaryBox.Text != employee.SubItems[5].Text)
                     {
                         modifyEmployee.CommandText += " SALARY = :sal,";
                         modifyEmployee.Parameters.Add("sal", OracleDbType.Int32).Value = Int32.Parse(salaryBox.Text);
+                        isModified = true;
                     }
                     if(passwordBox.Text != "")
                     {
                         modifyEmployee.CommandText += " PASSWORD = :pass,";
                         modifyEmployee.Parameters.Add("pass", OracleDbType.Varchar2).Value = passwordBox.Text;
+                        isModified = true;
                     }
-                    modifyEmployee.CommandText = modifyEmployee.CommandText.Remove(modifyEmployee.CommandText.LastIndexOf(','), 1);
+
+                    // Remove last ','
+                    if(modifyEmployee.CommandText.LastIndexOf(',') != -1)
+                    {
+                        modifyEmployee.CommandText = modifyEmployee.CommandText.Remove(modifyEmployee.CommandText.LastIndexOf(','), 1);
+                    }
                     modifyEmployee.CommandText += " WHERE EMPLOYEE_ID = :eid"; 
                     modifyEmployee.Parameters.Add("eid", OracleDbType.Int32).Value = Int32.Parse(employee.SubItems[0].Text);
 
-                    int updates = modifyEmployee.ExecuteNonQuery();
+                    if (isModified)
+                    {
+                        int updates = modifyEmployee.ExecuteNonQuery();
+                    }
                     this.Close();
                 }
             } 
