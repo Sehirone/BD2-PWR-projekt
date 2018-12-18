@@ -142,5 +142,11 @@ namespace ShopAppBD
             EmployeesForm employeesForm = new EmployeesForm(conn);
             employeesForm.ShowDialog();
         }
+
+        private void transactionHistButton_Click(object sender, EventArgs e)
+        {
+            TransactionHistoryForm transactionHistoryForm = new TransactionHistoryForm(conn);
+            transactionHistoryForm.ShowDialog();
+        }
     }
 }

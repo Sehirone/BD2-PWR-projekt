@@ -89,6 +89,12 @@
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseDetailsForm.Designer.cs">
+      <DependentUpon>PurchaseDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SellingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,12 @@
     </Compile>
     <Compile Include="ShowRotaForm.Designer.cs">
       <DependentUpon>ShowRotaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionHistoryForm.Designer.cs">
+      <DependentUpon>TransactionHistoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <EmbeddedResource Include="AddModifyEmployeeForm.resx">
@@ -129,11 +141,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PurchaseDetailsForm.resx">
+      <DependentUpon>PurchaseDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SellingForm.resx">
       <DependentUpon>SellingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowRotaForm.resx">
       <DependentUpon>ShowRotaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionHistoryForm.resx">
+      <DependentUpon>TransactionHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

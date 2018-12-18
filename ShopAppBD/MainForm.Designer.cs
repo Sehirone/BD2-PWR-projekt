@@ -80,6 +80,7 @@
             this.transactionHistButton.TabIndex = 3;
             this.transactionHistButton.Text = "Historia transkacji";
             this.transactionHistButton.UseVisualStyleBackColor = true;
+            this.transactionHistButton.Click += new System.EventHandler(this.transactionHistButton_Click);
             // 
             // employeesButton
             // 
@@ -162,6 +163,7 @@
             this.Controls.Add(this.sellingButton);
             this.Controls.Add(this.reconnectButton);
             this.Controls.Add(this.infoBox);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "ShopApp";
             this.ResumeLayout(false);
