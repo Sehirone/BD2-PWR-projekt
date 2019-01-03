@@ -74,6 +74,12 @@
     <Compile Include="CheckProductForm.Designer.cs">
       <DependentUpon>CheckProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeliveredGoodsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeliveredGoodsForm.Designer.cs">
+      <DependentUpon>DeliveredGoodsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,12 @@
     <Compile Include="ShowRotaForm.Designer.cs">
       <DependentUpon>ShowRotaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuppliersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppliersForm.Designer.cs">
+      <DependentUpon>SuppliersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransactionHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CheckProductForm.resx">
       <DependentUpon>CheckProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeliveredGoodsForm.resx">
+      <DependentUpon>DeliveredGoodsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
@@ -158,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowRotaForm.resx">
       <DependentUpon>ShowRotaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppliersForm.resx">
+      <DependentUpon>SuppliersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransactionHistoryForm.resx">
       <DependentUpon>TransactionHistoryForm.cs</DependentUpon>

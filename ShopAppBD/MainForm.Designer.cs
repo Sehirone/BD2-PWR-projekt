@@ -38,6 +38,7 @@
             this.showRotaButton = new System.Windows.Forms.Button();
             this.addDeliveryButton = new System.Windows.Forms.Button();
             this.addModifyProductButton = new System.Windows.Forms.Button();
+            this.deliveriesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // infoBox
@@ -148,12 +149,24 @@
             this.addModifyProductButton.UseVisualStyleBackColor = true;
             this.addModifyProductButton.Click += new System.EventHandler(this.addModifyProductButton_Click);
             // 
+            // deliveriesButton
+            // 
+            this.deliveriesButton.Enabled = false;
+            this.deliveriesButton.Location = new System.Drawing.Point(129, 122);
+            this.deliveriesButton.Name = "deliveriesButton";
+            this.deliveriesButton.Size = new System.Drawing.Size(111, 49);
+            this.deliveriesButton.TabIndex = 10;
+            this.deliveriesButton.Text = "Dostawy  Dostawcy";
+            this.deliveriesButton.UseVisualStyleBackColor = true;
+            this.deliveriesButton.Click += new System.EventHandler(this.deliveriesButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.logoutButton;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.deliveriesButton);
             this.Controls.Add(this.addModifyProductButton);
             this.Controls.Add(this.addDeliveryButton);
             this.Controls.Add(this.showRotaButton);
@@ -184,6 +197,7 @@
         private System.Windows.Forms.Button showRotaButton;
         private System.Windows.Forms.Button addDeliveryButton;
         private System.Windows.Forms.Button addModifyProductButton;
+        private System.Windows.Forms.Button deliveriesButton;
     }
 }
 

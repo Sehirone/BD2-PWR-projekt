@@ -92,6 +92,7 @@ namespace ShopAppBD
             if(privilageLevel >= 3)
             {
                 employeesButton.Enabled = true;
+                deliveriesButton.Enabled = true;
             }
         }
 
@@ -153,6 +154,12 @@ namespace ShopAppBD
         {
             AddDeliveryForm addDeliveryForm = new AddDeliveryForm(conn, user);
             addDeliveryForm.ShowDialog();
+        }
+
+        private void deliveriesButton_Click(object sender, EventArgs e)
+        {
+            SuppliersForm suppliersForm = new SuppliersForm(conn);
+            suppliersForm.ShowDialog();
         }
     }
 }
