@@ -28,50 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.suppliersView = new System.Windows.Forms.ListView();
+            this.deliveriesView = new System.Windows.Forms.ListView();
             this.idColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.nameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.shipmentsColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.employeeDetailsColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contentsColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // suppliersView
+            // deliveriesView
             // 
-            this.suppliersView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.deliveriesView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.idColumn,
-            this.nameColumn,
-            this.shipmentsColumn});
-            this.suppliersView.FullRowSelect = true;
-            this.suppliersView.GridLines = true;
-            this.suppliersView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.suppliersView.Location = new System.Drawing.Point(12, 12);
-            this.suppliersView.MultiSelect = false;
-            this.suppliersView.Name = "suppliersView";
-            this.suppliersView.Size = new System.Drawing.Size(459, 426);
-            this.suppliersView.TabIndex = 3;
-            this.suppliersView.UseCompatibleStateImageBehavior = false;
-            this.suppliersView.View = System.Windows.Forms.View.Details;
+            this.dateColumn,
+            this.employeeDetailsColumn,
+            this.contentsColumn});
+            this.deliveriesView.FullRowSelect = true;
+            this.deliveriesView.GridLines = true;
+            this.deliveriesView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.deliveriesView.Location = new System.Drawing.Point(12, 12);
+            this.deliveriesView.MultiSelect = false;
+            this.deliveriesView.Name = "deliveriesView";
+            this.deliveriesView.Size = new System.Drawing.Size(776, 426);
+            this.deliveriesView.TabIndex = 3;
+            this.deliveriesView.UseCompatibleStateImageBehavior = false;
+            this.deliveriesView.View = System.Windows.Forms.View.Details;
             // 
             // idColumn
             // 
             this.idColumn.Text = "ID";
             this.idColumn.Width = 30;
             // 
-            // nameColumn
+            // dateColumn
             // 
-            this.nameColumn.Text = "Nazwa";
-            this.nameColumn.Width = 110;
+            this.dateColumn.Text = "Data";
+            this.dateColumn.Width = 90;
             // 
-            // shipmentsColumn
+            // employeeDetailsColumn
             // 
-            this.shipmentsColumn.Text = "Ilość dostaw";
-            this.shipmentsColumn.Width = 80;
+            this.employeeDetailsColumn.Text = "Przyjmujący";
+            this.employeeDetailsColumn.Width = 150;
+            // 
+            // contentsColumn
+            // 
+            this.contentsColumn.Text = "Zawartość";
+            this.contentsColumn.Width = 300;
             // 
             // DeliveredGoodsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.suppliersView);
+            this.Controls.Add(this.deliveriesView);
             this.Name = "DeliveredGoodsForm";
             this.Text = "DeliveredGoodsForm";
             this.ResumeLayout(false);
@@ -80,9 +87,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView suppliersView;
+        private System.Windows.Forms.ListView deliveriesView;
         private System.Windows.Forms.ColumnHeader idColumn;
-        private System.Windows.Forms.ColumnHeader nameColumn;
-        private System.Windows.Forms.ColumnHeader shipmentsColumn;
+        private System.Windows.Forms.ColumnHeader dateColumn;
+        private System.Windows.Forms.ColumnHeader employeeDetailsColumn;
+        private System.Windows.Forms.ColumnHeader contentsColumn;
     }
 }
