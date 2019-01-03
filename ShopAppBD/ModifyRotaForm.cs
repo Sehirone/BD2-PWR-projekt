@@ -57,6 +57,11 @@ namespace ShopAppBD
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
+            populateView();
+        }
+
+        private void populateView()
+        {
             rotaView.Items.Clear();
 
             OracleCommand getRota = new OracleCommand();
@@ -66,19 +71,36 @@ namespace ShopAppBD
             while (dataReader.Read())
             {
                 string[] splittedDataTime = Convert.ToString(dataReader.GetOracleTimeStamp(2)).Split(' ');
-                string[] row = { Convert.ToString(dataReader.GetInt32(4)), splittedDataTime[1], Convert.ToString(dataReader.GetInt32(3)), dataReader.GetString(0) + " " + dataReader.GetString(1)};
+                string[] row = { Convert.ToString(dataReader.GetInt32(4)), splittedDataTime[1], Convert.ToString(dataReader.GetDouble(3)), dataReader.GetString(0) + " " + dataReader.GetString(1) };
                 rotaView.Items.Add(new ListViewItem(row));
             }
         }
 
         private void addShiftButton_Click(object sender, EventArgs e)
         {
-
+            OracleCommand addShift = new OracleCommand();
+            addShift.Connection = conn;
+            addShift.CommandText = "INSERT INTO GODZINY_DO_GRAFIKU(EMPLOYEE_ID, DATE_TIME, HOURS) VALUES(" +
+                                    "'" + employeesBox.SelectedItem.ToString().Split(':')[0] + "', " +
+                                    "TO_DATE('" + monthCalendar1.SelectionRange.Start.ToShortDateString() + " " + startTimeBox.SelectedItem.ToString() + "', 'dd.mm.yyyy HH24:MI'), " +
+                                    "'" + workHoursBox.SelectedItem.ToString() + "')";
+            addShift.Parameters.Add("p1", OracleDbType.Int32).Value = Int32.Parse(employeesBox.SelectedItem.ToString().Split(':')[0]);
+            addShift.Parameters.Add("p2", OracleDbType.Double).Value = Double.Parse(workHoursBox.SelectedItem.ToString());
+            int updates = addShift.ExecuteNonQuery();
+            populateView();
         }
 
         private void removeShiftButton_Click(object sender, EventArgs e)
         {
-
+            if(rotaView.SelectedItems.Count > 0)
+            {
+                OracleCommand removeShift = new OracleCommand();
+                removeShift.Connection = conn;
+                removeShift.CommandText = "DELETE FROM GODZINY_DO_GRAFIKU WHERE ROTA_HOURS_ID = " + rotaView.SelectedItems[0].SubItems[0].Text;
+                int updates = removeShift.ExecuteNonQuery();
+                populateView();
+            }
+            
         }
     }
 }

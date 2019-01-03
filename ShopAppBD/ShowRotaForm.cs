@@ -31,7 +31,7 @@ namespace ShopAppBD
             while(dataReader.Read())
             {
                 string[] splittedDataTime = Convert.ToString(dataReader.GetOracleTimeStamp(1)).Split(' ');
-                string[] row = { splittedDataTime[0], splittedDataTime[1], Convert.ToString(dataReader.GetInt32(2)) };
+                string[] row = { splittedDataTime[0], splittedDataTime[1], Convert.ToString(dataReader.GetDouble(2)) };
                 rotaView.Items.Add(new ListViewItem(row));
             }
         }
