@@ -98,6 +98,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyRotaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyRotaForm.Designer.cs">
+      <DependentUpon>ModifyRotaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyRotaForm.resx">
+      <DependentUpon>ModifyRotaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

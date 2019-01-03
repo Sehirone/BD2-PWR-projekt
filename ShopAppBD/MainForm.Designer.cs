@@ -39,6 +39,7 @@
             this.addDeliveryButton = new System.Windows.Forms.Button();
             this.addModifyProductButton = new System.Windows.Forms.Button();
             this.deliveriesButton = new System.Windows.Forms.Button();
+            this.modifyRotaButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // infoBox
@@ -160,12 +161,24 @@
             this.deliveriesButton.UseVisualStyleBackColor = true;
             this.deliveriesButton.Click += new System.EventHandler(this.deliveriesButton_Click);
             // 
+            // modifyRotaButton
+            // 
+            this.modifyRotaButton.Enabled = false;
+            this.modifyRotaButton.Location = new System.Drawing.Point(246, 67);
+            this.modifyRotaButton.Name = "modifyRotaButton";
+            this.modifyRotaButton.Size = new System.Drawing.Size(111, 49);
+            this.modifyRotaButton.TabIndex = 11;
+            this.modifyRotaButton.Text = "Modyfikuj grafik";
+            this.modifyRotaButton.UseVisualStyleBackColor = true;
+            this.modifyRotaButton.Click += new System.EventHandler(this.modifyRotaButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.logoutButton;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.modifyRotaButton);
             this.Controls.Add(this.deliveriesButton);
             this.Controls.Add(this.addModifyProductButton);
             this.Controls.Add(this.addDeliveryButton);
@@ -198,6 +211,7 @@
         private System.Windows.Forms.Button addDeliveryButton;
         private System.Windows.Forms.Button addModifyProductButton;
         private System.Windows.Forms.Button deliveriesButton;
+        private System.Windows.Forms.Button modifyRotaButton;
     }
 }
 

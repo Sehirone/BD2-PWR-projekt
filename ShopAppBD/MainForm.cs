@@ -80,6 +80,8 @@ namespace ShopAppBD
                 transactionHistButton.Enabled = false;
                 addDeliveryButton.Enabled = false;
                 employeesButton.Enabled = false;
+                modifyRotaButton.Enabled = false;
+                deliveriesButton.Enabled = false;
                 addModifyProductButton.Enabled = false;
             }
             if(privilageLevel >= 2)
@@ -87,7 +89,9 @@ namespace ShopAppBD
                 transactionHistButton.Enabled = true;
                 addDeliveryButton.Enabled = true;
                 addModifyProductButton.Enabled = true;
+                modifyRotaButton.Enabled = true;
                 employeesButton.Enabled = false;
+                deliveriesButton.Enabled = false;
             }
             if(privilageLevel >= 3)
             {
@@ -160,6 +164,12 @@ namespace ShopAppBD
         {
             SuppliersForm suppliersForm = new SuppliersForm(conn);
             suppliersForm.ShowDialog();
+        }
+
+        private void modifyRotaButton_Click(object sender, EventArgs e)
+        {
+            ModifyRotaForm modifyRotaForm = new ModifyRotaForm(conn);
+            modifyRotaForm.ShowDialog();
         }
     }
 }
