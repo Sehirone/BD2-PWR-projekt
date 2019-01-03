@@ -106,33 +106,50 @@ namespace ShopAppBD
             {
                 if (suppliersBox.SelectedIndex > -1)
                 {
-                    OracleCommand addDelivery = new OracleCommand();
-                    addDelivery.Connection = conn;
-                    addDelivery.CommandText = "INSERT INTO DOSTAWY (SUPPLIER_ID, EMPLOYEE_ID) VALUES (:p1,:p2)";
-                    addDelivery.Parameters.Add("p1", OracleDbType.Int32).Value = Int32.Parse(suppliersBox.Text.Split(':')[0]);
-                    addDelivery.Parameters.Add("p2", OracleDbType.Int32).Value = Int32.Parse(user.Login);
-                    int updates = addDelivery.ExecuteNonQuery();
+                    OracleTransaction myTrans = conn.BeginTransaction(IsolationLevel.ReadCommitted);
 
-                    OracleCommand getInsertedId = new OracleCommand();
-                    getInsertedId.Connection = conn;
-                    getInsertedId.CommandText = "select max(shipment_id) from DOSTAWY";
-                    OracleDataReader dataReader = getInsertedId.ExecuteReader();
-                    dataReader.Read();
-                    int shipment_id = dataReader.GetInt32(0);
+                    try
+                    {
+                        OracleCommand addDelivery = new OracleCommand();
+                        addDelivery.Connection = conn;
+                        addDelivery.Transaction = myTrans;
+                        addDelivery.CommandText = "INSERT INTO DOSTAWY (SUPPLIER_ID, EMPLOYEE_ID) VALUES (:p1,:p2)";
+                        addDelivery.Parameters.Add("p1", OracleDbType.Int32).Value = Int32.Parse(suppliersBox.Text.Split(':')[0]);
+                        addDelivery.Parameters.Add("p2", OracleDbType.Int32).Value = Int32.Parse(user.Login);
+                        int updates = addDelivery.ExecuteNonQuery();
 
-                    foreach(ListViewItem item in itemsList.Items) { 
-                        OracleCommand addDeliveredItem = new OracleCommand();
-                        addDeliveredItem.Connection = conn;
-                        addDeliveredItem.CommandText = "INSERT INTO ZAWARTOSC_DOSTAW (SHIPMENT_ID, PRODUCT_ID, PRODUCT_QUANTITY) VALUES (:p1,:p2,:p3)";
-                        addDeliveredItem.Parameters.Add("p1", OracleDbType.Int32).Value = shipment_id;
-                        addDeliveredItem.Parameters.Add("p2", OracleDbType.Int32).Value = Int32.Parse(item.SubItems[0].Text);
-                        addDeliveredItem.Parameters.Add("p3", OracleDbType.Int32).Value = Int32.Parse(item.SubItems[6].Text);
-                        updates = addDeliveredItem.ExecuteNonQuery();
+                        OracleCommand getInsertedId = new OracleCommand();
+                        getInsertedId.Connection = conn;
+                        getInsertedId.Transaction = myTrans;
+                        getInsertedId.CommandText = "select max(shipment_id) from DOSTAWY";
+                        OracleDataReader dataReader = getInsertedId.ExecuteReader();
+                        dataReader.Read();
+                        int shipment_id = dataReader.GetInt32(0);
+
+                        foreach (ListViewItem item in itemsList.Items)
+                        {
+                            OracleCommand addDeliveredItem = new OracleCommand();
+                            addDeliveredItem.Connection = conn;
+                            addDeliveredItem.Transaction = myTrans;
+                            addDeliveredItem.CommandText = "INSERT INTO ZAWARTOSC_DOSTAW (SHIPMENT_ID, PRODUCT_ID, PRODUCT_QUANTITY) VALUES (:p1,:p2,:p3)";
+                            addDeliveredItem.Parameters.Add("p1", OracleDbType.Int32).Value = shipment_id;
+                            addDeliveredItem.Parameters.Add("p2", OracleDbType.Int32).Value = Int32.Parse(item.SubItems[0].Text);
+                            addDeliveredItem.Parameters.Add("p3", OracleDbType.Int32).Value = Int32.Parse(item.SubItems[6].Text);
+                            updates = addDeliveredItem.ExecuteNonQuery();
+                        }
+
+                        myTrans.Commit();
+
+                        // Cleanup
+                        itemsList.Items.Clear();
+                        infoBox.Text = "Dodano dostawę!";
                     }
-
-                    // Cleanup
-                    itemsList.Items.Clear();
-                    infoBox.Text = "Dodano dostawę!";
+                    catch(Exception)
+                    {
+                        myTrans.Rollback();
+                        infoBox.Text = "Nie udało się dodać dostawy - spróbuj ponownie!";
+                    }
+                    
                 } else
                 {
                     infoBox.Text = "Dostawca musi zostać wybrany!";
