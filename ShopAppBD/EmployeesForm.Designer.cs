@@ -117,6 +117,7 @@
             this.Controls.Add(this.modifyEmployee);
             this.Controls.Add(this.addEmployee);
             this.Controls.Add(this.employeesView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "EmployeesForm";
             this.Text = "EmployeesForm";

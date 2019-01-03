@@ -196,6 +196,7 @@
             this.Controls.Add(this.surnameLabel);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.nameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "AddModifyEmployeeForm";
             this.Text = "AddModifyEmployee";

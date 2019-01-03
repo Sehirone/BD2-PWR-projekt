@@ -206,7 +206,7 @@ CREATE TABLE DOSTAWCY
 CREATE TABLE DOSTAWY
 (    
         SHIPMENT_ID NUMBER(3) PRIMARY KEY NOT NULL,
-        SHIPMENT_DATE DATE,
+        SHIPMENT_DATE DATE default sysdate not null,
         SUPPLIER_ID NUMBER(6) REFERENCES DOSTAWCY(SUPPLIER_ID),
         EMPLOYEE_ID NUMBER(3) REFERENCES PRACOWNICY(EMPLOYEE_ID)
 )TABLESPACE "USERS" ;
@@ -227,6 +227,18 @@ CREATE TABLE DOSTAWY
       SELECT dostawy_seq.NEXTVAL
       INTO   :new.shipment_id
       FROM   dual;
+   END;
+   /
+
+-- Trigger zwiekszajacy ilosc dostaw dostawcy
+   CREATE OR REPLACE TRIGGER ilosc_dostaw_zwieksz
+   BEFORE INSERT ON DOSTAWY
+   FOR EACH ROW
+   
+   BEGIN
+      UPDATE DOSTAWCY
+      SET DOSTAWCY.NUMBER_OF_SHIPMENTS = DOSTAWCY.NUMBER_OF_SHIPMENTS + 1
+      WHERE DOSTAWCY.SUPPLIER_ID = :new.SUPPLIER_ID;
    END;
    /
  
@@ -256,6 +268,18 @@ CREATE TABLE ZAWARTOSC_DOSTAW
       SELECT zawartosc_dostaw_seq.NEXTVAL
       INTO   :new.shipmentitems_id
       FROM   dual;
+   END;
+   /
+
+-- Trigger zwiekszajacy ilosc produktow na stanie o ilosc dostarczonego towaru
+   CREATE OR REPLACE TRIGGER dostawa_zwieksz_ilosc
+   BEFORE INSERT ON ZAWARTOSC_DOSTAW
+   FOR EACH ROW
+   
+   BEGIN
+      UPDATE PRODUKTY
+      SET PRODUKTY.QUANTITY = PRODUKTY.QUANTITY + :new.PRODUCT_QUANTITY
+      WHERE PRODUKTY.PRODUCT_ID = :new.PRODUCT_ID;
    END;
    /
  

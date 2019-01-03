@@ -148,5 +148,11 @@ namespace ShopAppBD
             TransactionHistoryForm transactionHistoryForm = new TransactionHistoryForm(conn);
             transactionHistoryForm.ShowDialog();
         }
+
+        private void addDeliveryButton_Click(object sender, EventArgs e)
+        {
+            AddDeliveryForm addDeliveryForm = new AddDeliveryForm(conn, user);
+            addDeliveryForm.ShowDialog();
+        }
     }
 }

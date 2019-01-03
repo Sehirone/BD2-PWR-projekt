@@ -135,6 +135,7 @@
             this.addDeliveryButton.TabIndex = 8;
             this.addDeliveryButton.Text = "Dodaj dostawe";
             this.addDeliveryButton.UseVisualStyleBackColor = true;
+            this.addDeliveryButton.Click += new System.EventHandler(this.addDeliveryButton_Click);
             // 
             // addModifyProductButton
             // 
