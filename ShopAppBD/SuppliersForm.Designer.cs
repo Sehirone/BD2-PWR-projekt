@@ -51,6 +51,7 @@
             this.suppliersView.MultiSelect = false;
             this.suppliersView.Name = "suppliersView";
             this.suppliersView.Size = new System.Drawing.Size(309, 426);
+            this.suppliersView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.suppliersView.TabIndex = 2;
             this.suppliersView.UseCompatibleStateImageBehavior = false;
             this.suppliersView.View = System.Windows.Forms.View.Details;
@@ -116,6 +117,7 @@
             this.Controls.Add(this.addSupplier);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.suppliersView);
+            this.MaximizeBox = false;
             this.Name = "SuppliersForm";
             this.Text = "SuppliersForm";
             this.ResumeLayout(false);

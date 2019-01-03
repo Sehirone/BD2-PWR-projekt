@@ -75,6 +75,7 @@
             this.rotaView.MultiSelect = false;
             this.rotaView.Name = "rotaView";
             this.rotaView.Size = new System.Drawing.Size(453, 203);
+            this.rotaView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.rotaView.TabIndex = 2;
             this.rotaView.UseCompatibleStateImageBehavior = false;
             this.rotaView.View = System.Windows.Forms.View.Details;
@@ -179,6 +180,8 @@
             this.Controls.Add(this.rotaView);
             this.Controls.Add(this.employeesBox);
             this.Controls.Add(this.monthCalendar1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "ModifyRotaForm";
             this.Text = "ModifyRotaForm";
             this.ResumeLayout(false);

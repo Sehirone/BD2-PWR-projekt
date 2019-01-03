@@ -51,6 +51,7 @@
             this.purchasesList.MultiSelect = false;
             this.purchasesList.Name = "purchasesList";
             this.purchasesList.Size = new System.Drawing.Size(569, 308);
+            this.purchasesList.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.purchasesList.TabIndex = 0;
             this.purchasesList.UseCompatibleStateImageBehavior = false;
             this.purchasesList.View = System.Windows.Forms.View.Details;

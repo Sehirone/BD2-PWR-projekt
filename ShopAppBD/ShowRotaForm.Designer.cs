@@ -46,6 +46,7 @@
             this.rotaView.Location = new System.Drawing.Point(9, 12);
             this.rotaView.Name = "rotaView";
             this.rotaView.Size = new System.Drawing.Size(390, 426);
+            this.rotaView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.rotaView.TabIndex = 0;
             this.rotaView.UseCompatibleStateImageBehavior = false;
             this.rotaView.View = System.Windows.Forms.View.Details;
@@ -71,6 +72,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 450);
             this.Controls.Add(this.rotaView);
+            this.MaximizeBox = false;
             this.Name = "ShowRotaForm";
             this.Text = "ShowRota";
             this.ResumeLayout(false);

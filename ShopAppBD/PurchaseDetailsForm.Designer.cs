@@ -30,9 +30,9 @@
         {
             this.purchasesList = new System.Windows.Forms.ListView();
             this.IdColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.priceColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.quantityColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.nameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sumColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
@@ -50,6 +50,7 @@
             this.purchasesList.MultiSelect = false;
             this.purchasesList.Name = "purchasesList";
             this.purchasesList.Size = new System.Drawing.Size(455, 308);
+            this.purchasesList.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.purchasesList.TabIndex = 1;
             this.purchasesList.UseCompatibleStateImageBehavior = false;
             this.purchasesList.View = System.Windows.Forms.View.Details;
@@ -59,6 +60,11 @@
             this.IdColumn.Text = "ID";
             this.IdColumn.Width = 30;
             // 
+            // nameColumn
+            // 
+            this.nameColumn.Text = "Nazwa";
+            this.nameColumn.Width = 100;
+            // 
             // priceColumn
             // 
             this.priceColumn.Text = "Cena";
@@ -67,11 +73,6 @@
             // quantityColumn
             // 
             this.quantityColumn.Text = "Ilość";
-            // 
-            // nameColumn
-            // 
-            this.nameColumn.Text = "Nazwa";
-            this.nameColumn.Width = 100;
             // 
             // sumColumn
             // 

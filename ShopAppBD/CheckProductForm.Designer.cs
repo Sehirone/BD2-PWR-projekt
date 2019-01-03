@@ -100,6 +100,7 @@
             this.itemsList.MultiSelect = false;
             this.itemsList.Name = "itemsList";
             this.itemsList.Size = new System.Drawing.Size(555, 381);
+            this.itemsList.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.itemsList.TabIndex = 5;
             this.itemsList.UseCompatibleStateImageBehavior = false;
             this.itemsList.View = System.Windows.Forms.View.Details;

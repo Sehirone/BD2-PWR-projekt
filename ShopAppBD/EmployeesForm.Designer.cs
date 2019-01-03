@@ -55,6 +55,7 @@
             this.employeesView.MultiSelect = false;
             this.employeesView.Name = "employeesView";
             this.employeesView.Size = new System.Drawing.Size(711, 426);
+            this.employeesView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.employeesView.TabIndex = 1;
             this.employeesView.UseCompatibleStateImageBehavior = false;
             this.employeesView.View = System.Windows.Forms.View.Details;

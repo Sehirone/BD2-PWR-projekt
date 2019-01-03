@@ -54,9 +54,9 @@
             // 
             // reconnectButton
             // 
-            this.reconnectButton.Location = new System.Drawing.Point(667, 409);
+            this.reconnectButton.Location = new System.Drawing.Point(450, 412);
             this.reconnectButton.Name = "reconnectButton";
-            this.reconnectButton.Size = new System.Drawing.Size(121, 29);
+            this.reconnectButton.Size = new System.Drawing.Size(140, 29);
             this.reconnectButton.TabIndex = 1;
             this.reconnectButton.Text = "Połącz z bazą";
             this.reconnectButton.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             this.sellingButton.Enabled = false;
             this.sellingButton.Location = new System.Drawing.Point(12, 12);
             this.sellingButton.Name = "sellingButton";
-            this.sellingButton.Size = new System.Drawing.Size(111, 49);
+            this.sellingButton.Size = new System.Drawing.Size(140, 80);
             this.sellingButton.TabIndex = 2;
             this.sellingButton.Text = "Sprzedaż";
             this.sellingButton.UseVisualStyleBackColor = true;
@@ -76,9 +76,9 @@
             // transactionHistButton
             // 
             this.transactionHistButton.Enabled = false;
-            this.transactionHistButton.Location = new System.Drawing.Point(363, 12);
+            this.transactionHistButton.Location = new System.Drawing.Point(304, 98);
             this.transactionHistButton.Name = "transactionHistButton";
-            this.transactionHistButton.Size = new System.Drawing.Size(111, 49);
+            this.transactionHistButton.Size = new System.Drawing.Size(140, 80);
             this.transactionHistButton.TabIndex = 3;
             this.transactionHistButton.Text = "Historia transkacji";
             this.transactionHistButton.UseVisualStyleBackColor = true;
@@ -87,9 +87,9 @@
             // employeesButton
             // 
             this.employeesButton.Enabled = false;
-            this.employeesButton.Location = new System.Drawing.Point(12, 67);
+            this.employeesButton.Location = new System.Drawing.Point(12, 184);
             this.employeesButton.Name = "employeesButton";
-            this.employeesButton.Size = new System.Drawing.Size(111, 49);
+            this.employeesButton.Size = new System.Drawing.Size(140, 80);
             this.employeesButton.TabIndex = 4;
             this.employeesButton.Text = "Pracownicy";
             this.employeesButton.UseVisualStyleBackColor = true;
@@ -98,9 +98,9 @@
             // checkProductButton
             // 
             this.checkProductButton.Enabled = false;
-            this.checkProductButton.Location = new System.Drawing.Point(129, 12);
+            this.checkProductButton.Location = new System.Drawing.Point(158, 12);
             this.checkProductButton.Name = "checkProductButton";
-            this.checkProductButton.Size = new System.Drawing.Size(111, 49);
+            this.checkProductButton.Size = new System.Drawing.Size(140, 80);
             this.checkProductButton.TabIndex = 5;
             this.checkProductButton.Text = "Sprawdź produkt";
             this.checkProductButton.UseVisualStyleBackColor = true;
@@ -109,9 +109,9 @@
             // logoutButton
             // 
             this.logoutButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.logoutButton.Location = new System.Drawing.Point(667, 374);
+            this.logoutButton.Location = new System.Drawing.Point(450, 377);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(121, 29);
+            this.logoutButton.Size = new System.Drawing.Size(140, 29);
             this.logoutButton.TabIndex = 6;
             this.logoutButton.Text = "Wyloguj";
             this.logoutButton.UseVisualStyleBackColor = true;
@@ -120,9 +120,9 @@
             // showRotaButton
             // 
             this.showRotaButton.Enabled = false;
-            this.showRotaButton.Location = new System.Drawing.Point(129, 67);
+            this.showRotaButton.Location = new System.Drawing.Point(304, 12);
             this.showRotaButton.Name = "showRotaButton";
-            this.showRotaButton.Size = new System.Drawing.Size(111, 49);
+            this.showRotaButton.Size = new System.Drawing.Size(140, 80);
             this.showRotaButton.TabIndex = 7;
             this.showRotaButton.Text = "Wyświetl grafik";
             this.showRotaButton.UseVisualStyleBackColor = true;
@@ -131,9 +131,9 @@
             // addDeliveryButton
             // 
             this.addDeliveryButton.Enabled = false;
-            this.addDeliveryButton.Location = new System.Drawing.Point(12, 122);
+            this.addDeliveryButton.Location = new System.Drawing.Point(12, 98);
             this.addDeliveryButton.Name = "addDeliveryButton";
-            this.addDeliveryButton.Size = new System.Drawing.Size(111, 49);
+            this.addDeliveryButton.Size = new System.Drawing.Size(140, 80);
             this.addDeliveryButton.TabIndex = 8;
             this.addDeliveryButton.Text = "Dodaj dostawe";
             this.addDeliveryButton.UseVisualStyleBackColor = true;
@@ -142,9 +142,9 @@
             // addModifyProductButton
             // 
             this.addModifyProductButton.Enabled = false;
-            this.addModifyProductButton.Location = new System.Drawing.Point(246, 12);
+            this.addModifyProductButton.Location = new System.Drawing.Point(158, 98);
             this.addModifyProductButton.Name = "addModifyProductButton";
-            this.addModifyProductButton.Size = new System.Drawing.Size(111, 49);
+            this.addModifyProductButton.Size = new System.Drawing.Size(140, 80);
             this.addModifyProductButton.TabIndex = 9;
             this.addModifyProductButton.Text = "Dodaj/zmień produkt";
             this.addModifyProductButton.UseVisualStyleBackColor = true;
@@ -153,20 +153,20 @@
             // deliveriesButton
             // 
             this.deliveriesButton.Enabled = false;
-            this.deliveriesButton.Location = new System.Drawing.Point(129, 122);
+            this.deliveriesButton.Location = new System.Drawing.Point(158, 184);
             this.deliveriesButton.Name = "deliveriesButton";
-            this.deliveriesButton.Size = new System.Drawing.Size(111, 49);
+            this.deliveriesButton.Size = new System.Drawing.Size(140, 80);
             this.deliveriesButton.TabIndex = 10;
-            this.deliveriesButton.Text = "Dostawy  Dostawcy";
+            this.deliveriesButton.Text = "Dostawy   Dostawcy";
             this.deliveriesButton.UseVisualStyleBackColor = true;
             this.deliveriesButton.Click += new System.EventHandler(this.deliveriesButton_Click);
             // 
             // modifyRotaButton
             // 
             this.modifyRotaButton.Enabled = false;
-            this.modifyRotaButton.Location = new System.Drawing.Point(246, 67);
+            this.modifyRotaButton.Location = new System.Drawing.Point(450, 98);
             this.modifyRotaButton.Name = "modifyRotaButton";
-            this.modifyRotaButton.Size = new System.Drawing.Size(111, 49);
+            this.modifyRotaButton.Size = new System.Drawing.Size(140, 80);
             this.modifyRotaButton.TabIndex = 11;
             this.modifyRotaButton.Text = "Modyfikuj grafik";
             this.modifyRotaButton.UseVisualStyleBackColor = true;
@@ -177,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.logoutButton;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(605, 450);
             this.Controls.Add(this.modifyRotaButton);
             this.Controls.Add(this.deliveriesButton);
             this.Controls.Add(this.addModifyProductButton);

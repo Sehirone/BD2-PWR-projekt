@@ -49,6 +49,7 @@
             this.deliveriesView.MultiSelect = false;
             this.deliveriesView.Name = "deliveriesView";
             this.deliveriesView.Size = new System.Drawing.Size(776, 426);
+            this.deliveriesView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.deliveriesView.TabIndex = 3;
             this.deliveriesView.UseCompatibleStateImageBehavior = false;
             this.deliveriesView.View = System.Windows.Forms.View.Details;
