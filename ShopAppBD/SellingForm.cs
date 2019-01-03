@@ -92,7 +92,7 @@ namespace ShopAppBD
                     addSoldItem.Connection = conn;
                     addSoldItem.CommandText = "INSERT INTO SPRZEDANE_RZECZY (SALE_ID, PRODUCT_ID, ITEM_QUANTITY) VALUES (:p1,:p2,:p3)";
                     addSoldItem.Parameters.Add("p1", OracleDbType.Int32).Value = sale_id;
-                    addSoldItem.Parameters.Add("p2", OracleDbType.Double).Value = Double.Parse(currentItem.SubItems[0].Text);
+                    addSoldItem.Parameters.Add("p2", OracleDbType.Int32).Value = Int32.Parse(currentItem.SubItems[0].Text);
                     addSoldItem.Parameters.Add("p3", OracleDbType.Int32).Value = itemsCount;
                     updates = addSoldItem.ExecuteNonQuery();
                 }
