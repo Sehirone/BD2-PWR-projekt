@@ -78,16 +78,19 @@ namespace ShopAppBD
 
         private void addShiftButton_Click(object sender, EventArgs e)
         {
-            OracleCommand addShift = new OracleCommand();
-            addShift.Connection = conn;
-            addShift.CommandText = "INSERT INTO GODZINY_DO_GRAFIKU(EMPLOYEE_ID, DATE_TIME, HOURS) VALUES(" +
-                                    "'" + employeesBox.SelectedItem.ToString().Split(':')[0] + "', " +
-                                    "TO_DATE('" + monthCalendar1.SelectionRange.Start.ToShortDateString() + " " + startTimeBox.SelectedItem.ToString() + "', 'dd.mm.yyyy HH24:MI'), " +
-                                    "'" + workHoursBox.SelectedItem.ToString() + "')";
-            addShift.Parameters.Add("p1", OracleDbType.Int32).Value = Int32.Parse(employeesBox.SelectedItem.ToString().Split(':')[0]);
-            addShift.Parameters.Add("p2", OracleDbType.Double).Value = Double.Parse(workHoursBox.SelectedItem.ToString());
-            int updates = addShift.ExecuteNonQuery();
-            populateView();
+            if(employeesBox.SelectedIndex > -1 && startTimeBox.SelectedIndex > -1 && workHoursBox.SelectedIndex > -1)
+            {
+                OracleCommand addShift = new OracleCommand();
+                addShift.Connection = conn;
+                addShift.CommandText = "INSERT INTO GODZINY_DO_GRAFIKU(EMPLOYEE_ID, DATE_TIME, HOURS) VALUES(" +
+                                        "'" + employeesBox.SelectedItem.ToString().Split(':')[0] + "', " +
+                                        "TO_DATE('" + monthCalendar1.SelectionRange.Start.ToShortDateString() + " " + startTimeBox.SelectedItem.ToString() + "', 'dd.mm.yyyy HH24:MI'), " +
+                                        "'" + workHoursBox.SelectedItem.ToString() + "')";
+                addShift.Parameters.Add("p1", OracleDbType.Int32).Value = Int32.Parse(employeesBox.SelectedItem.ToString().Split(':')[0]);
+                addShift.Parameters.Add("p2", OracleDbType.Double).Value = Double.Parse(workHoursBox.SelectedItem.ToString());
+                int updates = addShift.ExecuteNonQuery();
+                populateView();
+            }
         }
 
         private void removeShiftButton_Click(object sender, EventArgs e)
